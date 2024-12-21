@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4000:4000"
+    networks:
+      - front
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - front
+
+networks:
+  front:
+    driver: bridge
